@@ -1,19 +1,15 @@
-import { camelizeKeys, decamelizeKeys } from 'humps';
+import { camelizeKeys, decamelizeKeys } from 'hump';
 // import fetch from 'isomorphic-fetch';
 import qs from 'qs';
 
 const KEY = 'aee9661b86bf453b87fef9bec68f41e8';
 const API_URL = 'http://localhost:3000';
 
-export default function callApi(endpoint, body, method, queryData, articles = false) {
+export default function callApi(endpoint, body, method) {
 
   const headers = new Headers();
   let bodyData = body;
   let queryParams = '';
-
-  if (queryData) {
-    queryParams = `?${qs.stringify({ ...queryData, apiKey: KEY }, { encode: false, indices: false })}`;
-  }
 
 
   const URL = `${API_URL}/${endpoint}${queryParams}`;
@@ -26,10 +22,6 @@ export default function callApi(endpoint, body, method, queryData, articles = fa
   }).then(response => response.json().then(json => ({ json, response })))
     .then(({ json, response }) => {
       const camelizedJson = camelizeKeys(json);
-
-      if (!response.ok && !articles) {
-        return Promise.reject(camelizedJson);
-      }
 
       return camelizedJson;
     });

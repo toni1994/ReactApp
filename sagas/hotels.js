@@ -8,7 +8,7 @@ var funAdd = () => fetch("http://localhost:3000/hotels").then(res=>res.json().th
 export function* loadHotel() {
     try {
 
-        const res = yield call(funcLoad);
+        const res = yield call(api.hotelsSources);
         yield put(actions.getHotelsSuccsess(res));
         console.log(res)
     }
@@ -21,7 +21,7 @@ export function* loadHotel() {
 export function* addHotel() {
     try {
 
-        const res = yield call(funAdd);
+        const res = yield call(api.hotelsSources);
         yield put(actions.getHotelsSuccsess(res));
         console.log(res)
     }
