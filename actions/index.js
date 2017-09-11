@@ -32,5 +32,28 @@ export const sort = (text) => ({
   text
 })
 
+export const getHotels = () => ({
+  type: 'GET_HOTELS',
+})
+
+export const getHotelsSuccsess = (list) => ({
+  type: 'GET_HOTELS_SUCCESS',
+  list,
+})
+
+export const getHotelsFailed = () => ({
+  type: 'GET_HOTELS_FAILED',
+})
+
+export const getHotelAddSuccsess = (hotel) => ({
+  type: 'GET_HOTELS_SUCCESS',
+  hotel,
+})
+
+export const getHotelAddFailed = () => ({
+  type: 'GET_HOTELS_FAILED',
+})
+
+
 
 

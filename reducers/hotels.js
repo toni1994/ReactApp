@@ -1,21 +1,16 @@
-const start=[{
-          id: 0,
-          name:"Hotel Lav",
-          img : 'http://www.istra.hr/.app/upl_images/header_hotel5.jpg',
-          category: '5 STARS',
-          selected: 'unselected'
-},
-{
-          id: 1,
-          name: "Hotel Globe",
-          img : 'http://www.istra.hr/.app/upl_images/header_hotel5.jpg',
-          category: '4 STARS',
-          selected: 'unselected'
-}]
+
+const start=[]
 
 const hotels = (state = start, action) => {
   switch (action.type) {
-    
+
+    case "GET_HOTELS_SUCCESS":
+    return action.list;
+
+    case "GET_HOTELS_SUCCESS":
+    return action.hotel;
+
+   
     case 'ADD_HOTEL':
       for(var i=0;i<state.length;i++)
         state[i].selected= "unselected"

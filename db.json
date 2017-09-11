@@ -1,9 +1,25 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-       "profile": { "name": "typicode" , "isWorking": "yessss" }
-  }
+  "hotels": [
+      {
+          "id": 0,
+          "name":"Hotel Lav",
+          "img" : "http://www.istra.hr/.app/upl_images/header_hotel5.jpg",
+          "category": "5 STARS",
+          "selected": "unselected"
+},
+{
+          "id": 1,
+          "name": "Hotel Globe",
+          "img" : "http://www.istra.hr/.app/upl_images/header_hotel5.jpg",
+          "category": "4 STARS",
+          "selected": "unselected"
+},
+      {
+          "id": 2,
+          "name": "Hotel Olimp",
+          "img" : "http://www.istra.hr/.app/upl_images/header_hotel5.jpg",
+          "category": "5 STARS",
+          "selected": "unselected"
+      }
+]
+}
