@@ -46,13 +46,22 @@ export const getHotelsFailed = () => ({
 })
 
 export const getHotelAddSuccsess = (hotel) => ({
-  type: 'GET_HOTELS_SUCCESS',
+  type: 'GET_ADD_HOTEL_SUCCESS',
   hotel,
 })
 
 export const getHotelAddFailed = () => ({
-  type: 'GET_HOTELS_FAILED',
+  type: 'GET_ADD_HOTEL_FAILED',
 })
+
+export const setHotelNameSuccsess = () => ({
+  type: 'SET_HOTEL_NAME_SUCCESS',
+})
+
+export const setHotelNameFailed = () => ({
+  type: 'SET_HOTEL_NAME_FAILED',
+})
+
 
 
 

@@ -7,8 +7,9 @@ const hotels = (state = start, action) => {
     case "GET_HOTELS_SUCCESS":
     return action.list;
 
-    case "GET_HOTELS_SUCCESS":
+    case "GET_ADD_HOTEL_SUCCESS":
     return action.hotel;
+    
 
    
     case 'ADD_HOTEL':

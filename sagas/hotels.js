@@ -3,7 +3,6 @@ import * as actions from '../actions';
 import { api } from '../services';
 
 var funcLoad = () => fetch("http://localhost:3000/hotels").then(res=>res.json().then( json => json));
-var funAdd = () => fetch("http://localhost:3000/hotels").then(res=>res.json().then( json => json));
 
 export function* loadHotel() {
     try {
@@ -13,7 +12,7 @@ export function* loadHotel() {
         console.log(res)
     }
     catch(e) {
-        yield put(actions.getHotelsFailed());
+        yield put(actions.getHotelsFailed(e));
     }
 
 }
@@ -21,12 +20,25 @@ export function* loadHotel() {
 export function* addHotel() {
     try {
 
-        const res = yield call(api.hotelsSources);
-        yield put(actions.getHotelsSuccsess(res));
+        const res = yield call(api.addHotel);
+        yield put(actions.getHotelAddSuccsess(res));
         console.log(res)
     }
     catch(e) {
-        yield put(actions.getHotelsFailed());
+        yield put(actions.getHotelAddFailed());
+    }
+
+}
+
+export function* setHotelName() {
+    try {
+
+        const res = yield call(api.setHotelName);
+        yield put(actions.setHotelNameSuccsess(res));
+        console.log(res)
+    }
+    catch(e) {
+        yield put(actions.setHotelNameFailed());
     }
 
 }
@@ -44,6 +56,13 @@ export function* watchAddHotel() {
     yield call(addHotel);
   }
 }
+
+export function* watchSetHotelName() {
+    while (true) {
+      yield take("SET_HOTELS_NAME");
+      yield call(setHotelName);
+    }
+  }
 
 
 
