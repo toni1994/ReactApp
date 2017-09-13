@@ -20,13 +20,6 @@
       "img": "http://www.istra.hr/.app/upl_images/header_hotel5.jpg",
       "category": "5 STARS",
       "selected": "unselected"
-    },
-    {
-      "name": "Hotel Salona",
-      "img": "http://www.istra.hr/.app/upl_images/header_hotel5.jpg",
-      "category": "5 STARS",
-      "selected": "unselected",
-      "id": 3
     }
   ]
 }

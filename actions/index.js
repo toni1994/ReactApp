@@ -62,6 +62,14 @@ export const setHotelNameFailed = () => ({
   type: 'SET_HOTEL_NAME_FAILED',
 })
 
+export const deleteHotelSuccsess = () => ({
+  type: 'DELETE_HOTEL_SUCCESS',
+})
+
+export const deleteHotelFailed = () => ({
+  type: 'DELETE_HOTEL_FAILED',
+})
+
 
 
 

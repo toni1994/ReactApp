@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {setHotelsName} from '../actions'
-import { watchSetHotelName } from '../sagas'
 
 let ChangeHotelsName = ({ id,name,dispatch }) => {
   let input

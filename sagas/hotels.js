@@ -6,7 +6,6 @@ var funcLoad = () => fetch("http://localhost:3000/hotels").then(res=>res.json().
 
 export function* loadHotel() {
     try {
-
         const res = yield call(api.hotelsSources);
         yield put(actions.getHotelsSuccsess(res));
         console.log(res)
@@ -30,10 +29,23 @@ export function* addHotel() {
 
 }
 
+export function* deleteHotel() {
+    try {
+        console.log(setId.id)
+        const res = yield call(api.deleteHotel);
+        yield put(actions.deleteHotelSuccsess());
+        console.log(res)
+    }
+    catch(e) {
+        yield put(actions.deleteHotelFailed());
+    }
+
+}
+
 export function* setHotelName() {
     try {
 
-        const res = yield call(api.setHotelName);
+        const res = yield call(api.setHotelNam);
         yield put(actions.setHotelNameSuccsess(res));
         console.log(res)
     }
@@ -64,9 +76,18 @@ export function* watchSetHotelName() {
     }
   }
 
+  export function* watchDeleteHotel() {
+    while (true) {  
+      yield take("DELETE_HOTEL");
+      yield call(deleteHotel);
+    }
+  }
+
+
 
 
 export default [
   fork(watchLoadHotel),
-  fork(watchAddHotel)
+  fork(watchAddHotel),
+  fork(watchDeleteHotel),
 ];
